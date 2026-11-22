@@ -26,7 +26,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest (26.04) has no prebuilt Python 3.9, which the
+    # minimum-supported-Python check below requires. Revisit when the
+    # supported Python floor moves past 3.9.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
